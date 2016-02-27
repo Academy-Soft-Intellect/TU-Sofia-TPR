@@ -8,6 +8,12 @@ Mars: https://eclipse.org/downloads/
 3. After starting eclipse put the proper workspace. See the screenshot: "how to open the project.png"
 Workspace in Eclipse should be: ...\Excersice 2\DemoBeta
 
-4. Run the project.
+4. Install Java Swing plug-in in Eclipse. See the screenshots in folder: How-To-Install-Swing-In-Eclipse
+To open the install window go to -> Help -> Install New Software and follow the screenshots:
 
-5. The passoword is: 123123
+5. Run the project by navigating to StorageSystem -> src ->(default package) -> StorageSystemUI.java and use Run (Ctrl + F11)
+
+6. The passoword is: 123123
+
+P.S. If the Project Explorer is empty -> Right Click -> Import... -> General -> Existing Projects into Workspace -> Next -> 
+Browse to ...\Excersice 2\DemoBeta\StorageSystem -> Check the project -> Finish
