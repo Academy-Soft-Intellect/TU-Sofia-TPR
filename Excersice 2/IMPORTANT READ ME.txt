@@ -1,0 +1,13 @@
+1. Download and install JDK
+v8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+v7: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+
+2. Download and Install (or Extract): Eclipse
+Mars: https://eclipse.org/downloads/
+
+3. After starting eclipse put the proper workspace. See the screenshot: "how to open the project.png"
+Workspace in Eclipse should be: ...\Excersice 2\DemoBeta
+
+4. Run the project.
+
+5. The passoword is: 123123

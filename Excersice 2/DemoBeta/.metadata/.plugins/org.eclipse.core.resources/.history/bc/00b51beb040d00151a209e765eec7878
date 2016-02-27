@@ -1,0 +1,105 @@
+import java.awt.EventQueue;
+import java.awt.Window;
+
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JToolBar;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
+
+
+public class StorageSystemUI {
+
+	private JFrame frame;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PasswordDialog dialog = new PasswordDialog();
+					dialog.setModal(true);
+					dialog.setVisible(true);
+					if(dialog.getIsPasswordEntered()){
+						StorageSystemUI window = new StorageSystemUI();
+						window.frame.setVisible(true);
+					} else {
+						
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public StorageSystemUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("Add New Item");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setBounds(10, 207, 158, 43);
+		frame.getContentPane().add(btnNewButton);
+		
+		Object rowData[][] = { { "Row1-Column1", "Row1-Column2", "Row1-Column3"},
+                { "Row2-Column1", "Row2-Column2", "Row2-Column3"} };
+		Object columnNames[] = { "Column One", "Column Two", "Column Three"};
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 76, 414, 120);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable(rowData, columnNames);
+		scrollPane.setViewportView(table);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Row1-Column1", "Row1-Column2", "Row1-Column3"},
+				{"Row2-Column1", "Row2-Column2", "Row2-Column3"},
+			},
+			new String[] {
+				"Column One", "Column Two", "Column Three"
+			}
+		));
+		DefaultTableModel tableModel = new DefaultTableModel() {
+
+			   @Override
+			   public boolean isCellEditable(int row, int column) {
+			       return false;
+			   }
+			};
+			table.setModel(tableModel);
+	}
+}

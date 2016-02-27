@@ -1,0 +1,85 @@
+import java.awt.EventQueue;
+import java.awt.Window;
+
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JToolBar;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+
+
+public class StorageSystemUI {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PasswordDialog dialog = new PasswordDialog();
+					dialog.setModal(true);
+					dialog.setVisible(true);
+					if(dialog.getIsPasswordEntered()){
+						StorageSystemUI window = new StorageSystemUI();
+						window.frame.setVisible(true);
+					} else {
+						
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public StorageSystemUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnTest = new JButton("Test 1");
+		btnTest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Hello");
+			}
+		});
+		btnTest.setBackground(Color.BLACK);
+		btnTest.setForeground(Color.YELLOW);
+		btnTest.setBounds(10, 227, 89, 23);
+		frame.getContentPane().add(btnTest);
+		
+		JButton btnTest_1 = new JButton("Test 2");
+		btnTest_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Bye");
+			}
+		});
+		btnTest_1.setBackground(Color.BLACK);
+		btnTest_1.setForeground(Color.GREEN);
+		btnTest_1.setBounds(110, 227, 89, 23);
+		frame.getContentPane().add(btnTest_1);
+	}
+}

@@ -1,0 +1,51 @@
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.WindowConstants;
+
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class PasswordDialog extends JDialog {
+	private JPasswordField passwordField;
+
+	/**
+	 * Create the dialog.
+	 */
+	public PasswordDialog() {
+		setBounds(100, 100, 250, 150);
+		getContentPane().setLayout(null);
+		setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
+		
+		JButton btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				char[] pass = passwordField.getPassword();
+				String passString = new String(pass);
+				
+				if (passString.equals("123123")) {
+					setVisible(false);
+					
+				}
+				else{
+					JOptionPane.showMessageDialog(null, "Wrong Password! Try again!");
+				}
+			}
+		});
+		btnOk.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnOk.setBounds(10, 61, 214, 39);
+		getContentPane().add(btnOk);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(10, 11, 214, 39);
+		getContentPane().add(passwordField);
+
+	}
+
+}

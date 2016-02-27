@@ -1,0 +1,56 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JPasswordField;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class Password extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JPasswordField passwordField;
+
+	/**
+	 * Create the dialog.
+	 */
+	public Password() {
+		setTitle("Password");
+		setBounds(100, 100, 250, 150);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(10, 22, 214, 31);
+		contentPanel.add(passwordField);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String password = passwordField.getPassword().toString();
+						if (password == "123123") {
+
+						} else {
+							JOptionPane.showMessageDialog(null, "Wrong Password! Try again!");
+						}
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+		}
+	}
+}
