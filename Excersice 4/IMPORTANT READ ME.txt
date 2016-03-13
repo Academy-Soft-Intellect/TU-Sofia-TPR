@@ -1,0 +1,17 @@
+1. Download and Install Android Studio: http://developer.android.com/sdk/index.html
+
+2. Start Android Studio.
+
+3. Use "Open an existing Android Studio project" and navigate to "...\Excersice 4\AndroidStudioProjects"
+
+4. Open FirstAndroidProject or SecondAndroidProject.
+4.1. FirstAndroidProject is Greatest Common Divider.
+4.2. SecondAndroidProject is Currency Converter.
+
+5. To run the project -> Use "Run" (Shift + F10) -> (second radio button) Launch Emulator -> Nexus 5 API 23 x86
+
+6. Wait for the emulator to load.
+
+7. Back to Android Studio and use "Run" again and use (first radio button) "Emulator Nexus 5 API 23 x86"  -> OK
+
+8. If you want to switch to another project -> File -> "Close Project" and the "Start Page" of Android Studio will load.
